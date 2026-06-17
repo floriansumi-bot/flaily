@@ -194,6 +194,54 @@ a { color: inherit; text-decoration: none; }
 }
 .window-foot strong { color: var(--text); }
 .next-run { color: var(--faint); }
+.hint-click { color: var(--accent); font-weight: 600; }
+
+/* clickable mail rows */
+.mail[role="button"] { cursor: pointer; align-items: center; }
+.mail[role="button"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.chev { color: var(--faint); font-size: 1.4rem; line-height: 1; flex: 0 0 auto; transition: transform .2s, color .2s; }
+.mail[role="button"]:hover .chev { color: var(--accent); transform: translateX(3px); }
+
+/* back button */
+.back-btn {
+  margin-left: auto; background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 5px 12px; font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer;
+  transition: border-color .2s, transform .15s;
+}
+.back-btn:hover { border-color: var(--accent); transform: translateX(-2px); }
+
+/* opened-email detail */
+.mail-detail { padding: 16px; animation: detail-in .25s var(--ease) both; }
+@keyframes detail-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.detail-head { margin-bottom: 12px; }
+.detail-from { display: flex; justify-content: space-between; gap: 10px; font-size: .82rem; }
+.detail-from .from { font-weight: 700; color: var(--text); }
+.detail-from .time { color: var(--faint); }
+.detail-subject { font-family: "Space Grotesk", sans-serif; font-size: 1.05rem; color: var(--text); margin-top: 4px; }
+.detail-action {
+  display: inline-flex; align-items: center; gap: 7px; font-size: .78rem; font-weight: 600;
+  padding: 5px 11px; border-radius: 999px; margin: 12px 0;
+}
+.detail-action.act-star  { background: rgba(251,191,36,.14); color: #fcd34d; }
+.detail-action.act-draft { background: rgba(45,212,191,.16); color: #5eead4; }
+.detail-action.act-skip  { background: rgba(148,163,184,.14); color: #94a3b8; }
+.detail-quote {
+  border-left: 2px solid var(--border); padding: 4px 0 4px 12px; margin: 0 0 12px;
+  color: var(--muted); font-size: .9rem; font-style: italic;
+}
+.detail-note { color: var(--muted); font-size: .9rem; margin-top: 4px; }
+
+/* drafted reply "compose" card */
+.compose {
+  border: 1px solid rgba(45,212,191,.4); border-radius: 12px; overflow: hidden;
+  background: rgba(45,212,191,.05); margin: 4px 0 12px;
+}
+.compose-bar { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--border); font-size: .76rem; color: var(--accent); font-weight: 600; background: rgba(45,212,191,.08); }
+.compose-meta { padding: 10px 12px 0; font-size: .78rem; color: var(--faint); display: grid; gap: 2px; }
+.compose-meta b { color: var(--muted); font-weight: 600; }
+.compose-body { padding: 8px 12px 12px; color: var(--text); font-size: .9rem; white-space: pre-line; }
+.attach { display: inline-flex; align-items: center; gap: 6px; margin: 0 12px 12px; padding: 6px 11px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); font-size: .8rem; color: var(--muted); }
+.compose-note { display: flex; align-items: center; gap: 6px; padding: 0 12px 11px; font-size: .76rem; color: var(--faint); }
 
 /* ---------- trust strip ---------- */
 .strip {

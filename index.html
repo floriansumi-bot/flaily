@@ -94,49 +94,58 @@
           </ul>
         </div>
 
-        <!-- Inbox mockup -->
-        <div class="hero-demo reveal" aria-hidden="false">
-          <div class="window" role="img" aria-label="A mock inbox showing Flaily starring an invoice and a tax letter, and preparing a draft reply.">
+        <!-- Interactive inbox demo -->
+        <div class="hero-demo reveal">
+          <div class="window" id="inbox" aria-label="Interactive demo inbox — open an email to see what Flaily did">
             <div class="window-bar">
               <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
-              <span class="window-title">Inbox · triaged by Flaily</span>
+              <span class="window-title" id="inboxTitle">Inbox · triaged by Flaily</span>
+              <button class="back-btn" id="inboxBack" type="button" hidden>← Inbox</button>
             </div>
-            <ul class="mail-list">
-              <li class="mail starred">
+
+            <ul class="mail-list" id="mailList">
+              <li class="mail starred" role="button" tabindex="0" data-mail="invoice" aria-label="Open: Swisscom — Your invoice for June is ready">
                 <span class="star" aria-hidden="true">★</span>
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Swisscom</span><span class="time">08:02</span></div>
                   <div class="subject">Your invoice for June is ready</div>
                   <div class="tags"><span class="tag money">Payment</span></div>
                 </div>
+                <span class="chev" aria-hidden="true">›</span>
               </li>
-              <li class="mail starred">
+              <li class="mail starred" role="button" tabindex="0" data-mail="tax" aria-label="Open: Service des contributions — Décision de taxation 2025">
                 <span class="star" aria-hidden="true">★</span>
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Service des contributions</span><span class="time">07:48</span></div>
                   <div class="subject">Décision de taxation 2025</div>
                   <div class="tags"><span class="tag gov">Government · Tax</span></div>
                 </div>
+                <span class="chev" aria-hidden="true">›</span>
               </li>
-              <li class="mail draft">
+              <li class="mail draft" role="button" tabindex="0" data-mail="lease" aria-label="Open: Landlord — Re: Can you send the signed lease? Draft reply ready">
                 <span class="star" aria-hidden="true">✎</span>
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Landlord</span><span class="time">07:31</span></div>
                   <div class="subject">Re: Can you send the signed lease?</div>
                   <div class="tags"><span class="tag drafted">Draft ready · lease.pdf attached</span></div>
                 </div>
+                <span class="chev" aria-hidden="true">›</span>
               </li>
-              <li class="mail muted">
+              <li class="mail muted" role="button" tabindex="0" data-mail="news" aria-label="Open: Newsletter — 10 deals you don't want to miss">
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Newsletter</span><span class="time">06:50</span></div>
                   <div class="subject">10 deals you don't want to miss</div>
                   <div class="tags"><span class="tag skip">Left alone</span></div>
                 </div>
+                <span class="chev" aria-hidden="true">›</span>
               </li>
             </ul>
-            <div class="window-foot">
+
+            <div class="mail-detail" id="mailDetail" hidden aria-live="polite"></div>
+
+            <div class="window-foot" id="inboxFoot">
               <span><strong>2</strong> starred · <strong>1</strong> draft ready · <strong>1</strong> ignored</span>
-              <span class="next-run">next run 18:00</span>
+              <span class="hint-click">tap an email ↑</span>
             </div>
           </div>
         </div>
