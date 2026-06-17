@@ -1,5 +1,5 @@
 /* Flaily showcase — minimal offline shell */
-const CACHE = "flaily-v2";
+const CACHE = "flaily-v3";
 const ASSETS = [
   "./",
   "./index.html",

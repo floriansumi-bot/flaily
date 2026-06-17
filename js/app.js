@@ -65,13 +65,24 @@
     lease: {
       from: "Landlord", time: "07:31", subject: "Re: Can you send the signed lease?",
       quote: "“Hi Florian, could you send over the signed lease when you get a chance? Thanks!”",
-      action: { cls: "act-draft", label: "✎ Draft reply prepared" },
-      compose: {
-        to: "Landlord", subject: "Re: Can you send the signed lease?",
-        body: "Hi,\n\nOf course — the signed lease is attached. Let me know if you need anything else.\n\nBest,\nFlorian",
-        attach: "lease.pdf"
-      },
-      note: "Flaily wrote this draft and attached the file you were asked for. It's waiting in your Drafts — nothing sends until you review it and hit send."
+      action: { cls: "act-draft", label: "✎ Flaily drafted 3 replies — pick the one that fits" },
+      replies: [
+        { label: "Send it now", body: "Hi,\n\nOf course — the signed lease is attached. Let me know if you need anything else.\n\nBest,\nFlorian", attach: "lease.pdf" },
+        { label: "Ask for a day", body: "Hi,\n\nSure thing — I'll dig out the signed copy and send it over by tomorrow evening at the latest.\n\nBest,\nFlorian" },
+        { label: "More formal", body: "Dear Sir or Madam,\n\nPlease find the signed lease agreement attached, as requested. Do not hesitate to contact me should you require anything further.\n\nKind regards,\nFlorian", attach: "lease.pdf" }
+      ],
+      note: "Flaily reads what's being asked and drafts a few replies in different directions — and attaches the file when one's requested. Pick one, tweak it, send it. It never sends on its own."
+    },
+    meeting: {
+      from: "Marie Dubois", time: "09:15", subject: "Can we move Thursday's call to Friday?",
+      quote: "“Hey! Something came up Thursday — could we push our call to Friday, same time? No worries if not.”",
+      action: { cls: "act-draft", label: "✎ Flaily drafted 3 replies — pick the one that fits" },
+      replies: [
+        { label: "Accept Friday", body: "Hi Marie,\n\nFriday at the same time works great for me — talk then!\n\nBest,\nFlorian" },
+        { label: "Suggest another slot", body: "Hi Marie,\n\nFriday's a little tight for me — could we do Friday morning, or Monday instead? Happy to work around you.\n\nBest,\nFlorian" },
+        { label: "Keep Thursday", body: "Hi Marie,\n\nI'd love to keep Thursday if you can still make it — but if Friday's the only option, just say the word and we'll move it.\n\nBest,\nFlorian" }
+      ],
+      note: "A question that needs a personal answer. Flaily prepared a few directions you might take — accept, propose another time, or hold the slot — so you just pick and send."
     },
     news: {
       from: "Newsletter", time: "06:50", subject: "10 deals you don't want to miss",
@@ -82,19 +93,32 @@
 
   function esc(s) { return String(s).replace(/[&<>]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]; }); }
 
+  function replySubject(d) { return /^re:/i.test(d.subject) ? d.subject : "Re: " + d.subject; }
+
+  function composeInner(d, i) {
+    var r = d.replies[i];
+    var h = '<div class="compose-meta"><span><b>To:</b> ' + esc(d.from) + '</span><span><b>Subject:</b> ' + esc(replySubject(d)) + '</span></div>' +
+      '<div class="compose-body">' + esc(r.body) + '</div>';
+    if (r.attach) h += '<div class="attach">📎 ' + esc(r.attach) + '</div>';
+    return h;
+  }
+
   function renderDetail(d) {
     var h = '<div class="detail-head">' +
       '<div class="detail-from"><span class="from">' + esc(d.from) + '</span><span class="time">' + esc(d.time) + '</span></div>' +
       '<div class="detail-subject">' + esc(d.subject) + '</div></div>';
     if (d.quote) h += '<p class="detail-quote">' + esc(d.quote) + '</p>';
     h += '<div class="detail-action ' + d.action.cls + '">' + esc(d.action.label) + '</div>';
-    if (d.compose) {
-      var c = d.compose;
+    if (d.replies && d.replies.length) {
+      h += '<div class="reply-options" role="tablist" aria-label="Suggested replies">';
+      d.replies.forEach(function (r, i) {
+        h += '<button type="button" class="reply-opt' + (i === 0 ? " selected" : "") +
+          '" role="tab" aria-selected="' + (i === 0 ? "true" : "false") + '" data-i="' + i + '">' + esc(r.label) + '</button>';
+      });
+      h += '</div>';
       h += '<div class="compose">' +
         '<div class="compose-bar">✎ Draft — waiting for your approval</div>' +
-        '<div class="compose-meta"><span><b>To:</b> ' + esc(c.to) + '</span><span><b>Subject:</b> ' + esc(c.subject) + '</span></div>' +
-        '<div class="compose-body">' + esc(c.body) + '</div>' +
-        '<div class="attach">📎 ' + esc(c.attach) + '</div>' +
+        '<div id="composeInner">' + composeInner(d, 0) + '</div>' +
         '<div class="compose-note">🔒 Flaily never sends — you press send.</div>' +
         '</div>';
     }
@@ -110,12 +134,26 @@
     var back = document.getElementById("inboxBack");
     var title = document.getElementById("inboxTitle");
 
+    var wireReplies = function (d) {
+      var opts = detail.querySelectorAll(".reply-opt");
+      var inner = detail.querySelector("#composeInner");
+      opts.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          opts.forEach(function (b) { b.classList.remove("selected"); b.setAttribute("aria-selected", "false"); });
+          btn.classList.add("selected"); btn.setAttribute("aria-selected", "true");
+          inner.innerHTML = composeInner(d, parseInt(btn.getAttribute("data-i"), 10));
+        });
+      });
+    };
+
     var openMail = function (key) {
       var d = DETAILS[key];
       if (!d) return;
       detail.innerHTML = renderDetail(d);
+      if (d.replies) wireReplies(d);
       list.hidden = true; foot.hidden = true; title.hidden = true;
       detail.hidden = false; back.hidden = false;
+      detail.scrollTop = 0;
       back.focus();
     };
     var closeMail = function () {
