@@ -6,3 +6,6 @@ Desktop.ini
 *.local.*
 __pycache__/
 *.pyc
+
+_shots/
+_ep*/
