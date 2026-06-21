@@ -46,6 +46,7 @@
     </a>
 
     <nav class="nav" aria-label="Primary">
+      <a href="#demo">Try it</a>
       <a href="#what">What it does</a>
       <a href="#how">How it works</a>
       <a href="#watches">What it watches</a>
@@ -62,6 +63,7 @@
   </header>
 
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#demo">Try it</a>
     <a href="#what">What it does</a>
     <a href="#how">How it works</a>
     <a href="#watches">What it watches</a>
@@ -158,6 +160,37 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERACTIVE TRIAGE DEMO ============ -->
+    <section class="section demo-live" id="demo">
+      <div class="section-head reveal">
+        <span class="kicker">Try it</span>
+        <h2>Watch Flaily clear an inbox.</h2>
+        <p>A sample inbox — no Gmail, nothing real. Press the button and watch Flaily read each message, decide what matters, and draft what needs a reply. Then open any one to see exactly what it did.</p>
+      </div>
+
+      <div class="demo-stage reveal" id="demoStage">
+        <div class="demo-controls">
+          <button class="btn primary" id="runTriage" type="button">▶ Run Flaily triage</button>
+          <button class="btn ghost" id="resetTriage" type="button" hidden>↻ Reset</button>
+          <span class="demo-status" id="demoStatus" aria-live="polite">12 unread · not triaged yet</span>
+        </div>
+
+        <div class="window demo-window">
+          <div class="window-bar">
+            <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+            <span class="window-title" id="dTitle">Inbox</span>
+            <button class="back-btn" id="dBack" type="button" hidden>← Inbox</button>
+          </div>
+          <ul class="mail-list" id="dList"></ul>
+          <div class="mail-detail" id="dDetail" hidden aria-live="polite"></div>
+          <div class="triage-ticker" id="dTicker" hidden aria-live="polite"></div>
+          <div class="window-foot" id="dFoot"></div>
+        </div>
+
+        <div class="report" id="dReport" hidden></div>
       </div>
     </section>
 
@@ -344,5 +377,6 @@
   </footer>
 
   <script src="js/app.js" defer></script>
+  <script src="js/demo.js" defer></script>
 </body>
 </html>

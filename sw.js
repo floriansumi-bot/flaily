@@ -1,10 +1,11 @@
 /* Flaily showcase — minimal offline shell */
-const CACHE = "flaily-v3";
+const CACHE = "flaily-v4";
 const ASSETS = [
   "./",
   "./index.html",
   "./css/styles.css",
   "./js/app.js",
+  "./js/demo.js",
   "./assets/favicon.svg",
   "./manifest.webmanifest"
 ];

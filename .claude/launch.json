@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "flaily", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "5614"], "port": 5614 }
+  ]
+}
