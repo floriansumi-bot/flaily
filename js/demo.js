@@ -16,77 +16,77 @@
   var INBOX = [
     { id: "invoice", from: "Swisscom", time: "08:02", subject: "Your invoice for June is ready",
       decision: "star", icon: "★", tagCls: "money", tagLabel: "Payment",
-      reason: "A bill with a due date — surfaced so it can't slip past you.",
+      reason: "A bill with a due date, surfaced so it can't slip past you.",
       note: "Flaily flags bills so the due date stays on your radar. No reply is needed, so it doesn't draft one." },
 
     { id: "tax", from: "Service des contributions", time: "07:48", subject: "Décision de taxation 2025",
       decision: "star", icon: "★", tagCls: "gov", tagLabel: "Government · Tax", sensitive: true,
-      reason: "Official tax document — surfaced immediately, never acted on.",
+      reason: "Official tax document, surfaced immediately, never acted on.",
       note: "Sensitive government mail is surfaced fast but never replied to, forwarded, or acted on." },
 
     { id: "lease", from: "Landlord", time: "07:31", subject: "Re: Can you send the signed lease?",
       decision: "draft", icon: "✎", tagCls: "drafted", tagLabel: "Draft ready · lease.pdf",
       quote: "“Hi Florian, could you send over the signed lease when you get a chance? Thanks!”",
-      reason: "A direct request — drafted a reply and attached the file asked for.",
+      reason: "A direct request, drafted a reply and attached the file asked for.",
       replies: [
-        { label: "Send it now", body: "Hi,\n\nOf course — the signed lease is attached. Let me know if you need anything else.\n\nBest,\nFlorian", attach: "lease.pdf" },
-        { label: "Ask for a day", body: "Hi,\n\nSure thing — I'll dig out the signed copy and send it over by tomorrow evening at the latest.\n\nBest,\nFlorian" },
+        { label: "Send it now", body: "Hi,\n\nOf course, the signed lease is attached. Let me know if you need anything else.\n\nBest,\nFlorian", attach: "lease.pdf" },
+        { label: "Ask for a day", body: "Hi,\n\nSure thing. I'll dig out the signed copy and send it over by tomorrow evening at the latest.\n\nBest,\nFlorian" },
         { label: "More formal", body: "Dear Sir or Madam,\n\nPlease find the signed lease agreement attached, as requested.\n\nKind regards,\nFlorian", attach: "lease.pdf" }
       ],
       note: "Flaily reads what's being asked, drafts a few directions, and attaches the requested file. You pick one and send." },
 
     { id: "security", from: "PostFinance", time: "07:12", subject: "Unusual sign-in to your account",
       decision: "star", icon: "★", tagCls: "gov", tagLabel: "Security", sensitive: true,
-      reason: "A security alert — surfaced at the top so you see it at once.",
-      note: "Security and bank alerts are surfaced immediately. Flaily never clicks links or acts on them — it just makes sure you notice." },
+      reason: "A security alert, surfaced at the top so you see it at once.",
+      note: "Security and bank alerts are surfaced immediately. Flaily never clicks links or acts on them; it just makes sure you notice." },
 
     { id: "payslip", from: "Payroll", time: "06:58", subject: "Your June payslip is available",
       decision: "star", icon: "★", tagCls: "money", tagLabel: "Payroll", sensitive: true,
-      reason: "Payroll / HR — surfaced and labelled, left for you to open.",
+      reason: "Payroll / HR, surfaced and labelled, left for you to open.",
       note: "Money, HR and payroll mail is always surfaced so it doesn't get buried." },
 
     { id: "meeting", from: "Marie Dubois", time: "09:15", subject: "Can we move Thursday's call to Friday?",
       decision: "draft", icon: "✎", tagCls: "appt", tagLabel: "Appointment · 3 drafts",
-      quote: "“Hey! Something came up Thursday — could we push our call to Friday, same time? No worries if not.”",
-      reason: "A question that needs a personal answer — drafted a few options.",
+      quote: "“Hey! Something came up Thursday, could we push our call to Friday, same time? No worries if not.”",
+      reason: "A question that needs a personal answer, drafted a few options.",
       replies: [
-        { label: "Accept Friday", body: "Hi Marie,\n\nFriday at the same time works great for me — talk then!\n\nBest,\nFlorian" },
-        { label: "Suggest a slot", body: "Hi Marie,\n\nFriday's a little tight — could we do Friday morning, or Monday instead?\n\nBest,\nFlorian" },
-        { label: "Keep Thursday", body: "Hi Marie,\n\nI'd love to keep Thursday if you can — but if Friday's the only option, just say the word.\n\nBest,\nFlorian" }
+        { label: "Accept Friday", body: "Hi Marie,\n\nFriday at the same time works great for me. Talk then!\n\nBest,\nFlorian" },
+        { label: "Suggest a slot", body: "Hi Marie,\n\nFriday's a little tight. Could we do Friday morning, or Monday instead?\n\nBest,\nFlorian" },
+        { label: "Keep Thursday", body: "Hi Marie,\n\nI'd love to keep Thursday if you can, but if Friday's the only option, just say the word.\n\nBest,\nFlorian" }
       ],
-      note: "A personal question. Flaily prepared a few directions — accept, propose another time, or hold the slot." },
+      note: "A personal question. Flaily prepared a few directions: accept, propose another time, or hold the slot." },
 
     { id: "appointment", from: "Doctolib", time: "09:40", subject: "Reminder: appointment Tuesday 14:00",
       decision: "star", icon: "★", tagCls: "appt", tagLabel: "Appointment",
-      reason: "A dated appointment — surfaced so the time doesn't get missed.",
+      reason: "A dated appointment, surfaced so the time doesn't get missed.",
       note: "Appointments and anything time-sensitive get surfaced so the date stays in view." },
 
     { id: "recruiter", from: "Léa @ Hirefield", time: "10:05", subject: "A frontend role that fits your profile",
       decision: "draft", icon: "✎", tagCls: "drafted", tagLabel: "Draft ready",
-      quote: "“Hi Florian — I came across your portfolio and have a frontend role I think you'd like. Open to a quick chat this week?”",
-      reason: "A real person, a real question — drafted a friendly reply.",
+      quote: "“Hi Florian, I came across your portfolio and have a frontend role I think you'd like. Open to a quick chat this week?”",
+      reason: "A real person, a real question, drafted a friendly reply.",
       replies: [
-        { label: "Keen — share details", body: "Hi Léa,\n\nThanks for reaching out! I'd be happy to hear more — could you send the role details and the company?\n\nBest,\nFlorian" },
+        { label: "Keen, share details", body: "Hi Léa,\n\nThanks for reaching out! I'd be happy to hear more. Could you send the role details and the company?\n\nBest,\nFlorian" },
         { label: "Politely pass", body: "Hi Léa,\n\nThanks for thinking of me! I'm not looking right now, but I'd be glad to stay in touch for the future.\n\nBest,\nFlorian" }
       ],
       note: "Outreach that deserves a human reply. Flaily drafts it; you decide whether to send." },
 
     { id: "news", from: "DealsWeekly", time: "06:50", subject: "🔥 10 deals you don't want to miss",
       decision: "ignore", icon: "", tagCls: "skip", tagLabel: "Left alone",
-      reason: "Promotional — nothing to do, left untouched to keep the inbox calm.",
-      note: "Marketing is left exactly as it is. Flaily never deletes — it just doesn't clutter your attention with it." },
+      reason: "Promotional, nothing to do, left untouched to keep the inbox calm.",
+      note: "Marketing is left exactly as it is. Flaily never deletes; it just doesn't clutter your attention with it." },
 
     { id: "linkedin", from: "LinkedIn", time: "06:30", subject: "5 new jobs for “frontend developer”",
       decision: "ignore", icon: "", tagCls: "skip", tagLabel: "Left alone",
-      reason: "Automated digest — not important, left alone.",
+      reason: "Automated digest, not important, left alone.",
       note: "Routine notification digests are left untouched." },
 
     { id: "spam", from: "rewards-claim@win-prizes.info", time: "05:11", subject: "CONGRATULATIONS!! You WON a FREE iPhone 16 🎁",
       decision: "block", icon: "🚫", tagCls: "skip", tagLabel: "Suggested: block sender",
       quote: "“You have been selected! Click here within 24 hours to claim your FREE iPhone 16. Limited offer!!!”",
-      reason: "Classic junk from a throwaway address — suggested for blocking.",
+      reason: "Classic junk from a throwaway address, suggested for blocking.",
       blockable: true,
-      note: "Flaily can block a noisy or scammy sender so their future mail skips your inbox — but only when you say so. It's the one outbound action it ever takes." }
+      note: "Flaily can block a noisy or scammy sender so their future mail skips your inbox, but only when you say so. It's the one outbound action it ever takes." }
   ];
 
   // ---- helpers ------------------------------------------------------------
@@ -120,7 +120,7 @@
     if (blocked[d.id]) cls += " blocked";
     var star = done && d.icon ? '<span class="star" aria-hidden="true">' + d.icon + '</span>' : '<span class="star ghost" aria-hidden="true">·</span>';
     var tag = done
-      ? '<div class="tags"><span class="tag ' + d.tagCls + '">' + esc(blocked[d.id] ? "Blocked — won't reach you" : d.tagLabel) + '</span></div>'
+      ? '<div class="tags"><span class="tag ' + d.tagCls + '">' + esc(blocked[d.id] ? "Blocked, won't reach you" : d.tagLabel) + '</span></div>'
       : '<div class="tags"><span class="tag raw">unread</span></div>';
     var role = done ? ' role="button" tabindex="0"' : '';
     return '<li class="' + cls + '" data-mail="' + d.id + '"' + role + ' aria-label="' + esc(d.from + ": " + d.subject) + '">' +
@@ -166,8 +166,8 @@
   function renderDetail(d) {
     var actLabel, actCls;
     if (d.decision === "star") { actCls = "act-star"; actLabel = "★ Starred · labelled " + d.tagLabel; }
-    else if (d.decision === "draft") { actCls = "act-draft"; actLabel = "✎ Draft" + (d.replies.length > 1 ? "s" : "") + " ready — pick the one that fits"; }
-    else if (d.decision === "block") { actCls = "act-block"; actLabel = blocked[d.id] ? "🚫 Sender blocked — future mail skips your inbox" : "🚫 Flaily suggests blocking this sender"; }
+    else if (d.decision === "draft") { actCls = "act-draft"; actLabel = "✎ Draft" + (d.replies.length > 1 ? "s" : "") + " ready. Pick the one that fits"; }
+    else if (d.decision === "block") { actCls = "act-block"; actLabel = blocked[d.id] ? "🚫 Sender blocked. Future mail skips your inbox" : "🚫 Flaily suggests blocking this sender"; }
     else { actCls = "act-skip"; actLabel = "Left alone"; }
 
     var h = '<div class="detail-head">' +
@@ -183,16 +183,16 @@
       });
       h += '</div>';
       h += '<div class="compose">' +
-        '<div class="compose-bar">✎ Draft — waiting for your approval</div>' +
+        '<div class="compose-bar">✎ Draft, waiting for your approval</div>' +
         '<div id="dComposeInner">' + composeInner(d, 0) + '</div>' +
         '<div class="compose-actions"><button type="button" class="btn primary sm" data-send="1">Approve &amp; send</button>' +
-        '<span class="compose-note">🔒 Flaily never sends — you press send.</span></div>' +
+        '<span class="compose-note">🔒 Flaily never sends; you press send.</span></div>' +
         '</div>';
     }
     if (d.decision === "block") {
       h += '<div class="block-actions">' +
         (blocked[d.id]
-          ? '<span class="block-done">🚫 Blocked — you won\'t see this sender again.</span>'
+          ? '<span class="block-done">🚫 Blocked. You won\'t see this sender again.</span>'
           : '<button type="button" class="btn primary sm" data-block="1">Block this sender</button><span class="compose-note">Only happens when you ask.</span>') +
         '</div>';
     }
@@ -229,7 +229,7 @@
     var sendBtn = els.detail.querySelector("[data-send]");
     if (sendBtn) sendBtn.addEventListener("click", function () {
       var box = els.detail.querySelector(".compose");
-      box.innerHTML = '<div class="sent-ok">✓ Sent — by you. Flaily only ever prepared the draft; the send was your call.</div>';
+      box.innerHTML = '<div class="sent-ok">✓ Sent, by you. Flaily only ever prepared the draft; the send was your call.</div>';
     });
     var blockBtn = els.detail.querySelector("[data-block]");
     if (blockBtn) blockBtn.addEventListener("click", function () {
@@ -281,7 +281,7 @@
       var d = INBOX[i];
       var li = rowEl(d.id);
       if (li) { li.classList.add("scanning"); li.scrollIntoView({ block: "nearest" }); }
-      tick('Reading <i>“' + esc(d.subject.slice(0, 38)) + (d.subject.length > 38 ? "…" : "") + '”</i> — ' + esc(d.from));
+      tick('Reading <i>“' + esc(d.subject.slice(0, 38)) + (d.subject.length > 38 ? "…" : "") + '”</i>, ' + esc(d.from));
       await wait(420);
       // apply the decision to the row
       if (li) {
@@ -306,7 +306,7 @@
     showReport();
     els.run.hidden = true;
     els.reset.hidden = false;
-    els.status.textContent = "Done — tap any email to see what Flaily did.";
+    els.status.textContent = "Done. Tap any email to see what Flaily did.";
   }
 
   function showReport() {
@@ -318,7 +318,7 @@
         '<span class="rp draft">✎ drafted ' + c.draft + '</span> replies, ' +
         '<span class="rp block">🚫 flagged ' + c.block + '</span> to block, and ' +
         '<span class="rp skip">left ' + c.ignore + ' alone</span>. ' +
-        '<b>Nothing was sent or deleted</b> — every action is yours to approve.</p>';
+        '<b>Nothing was sent or deleted.</b> Every action is yours to approve.</p>';
     els.report.hidden = false;
     if (!reduce) els.report.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }

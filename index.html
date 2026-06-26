@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add("js");</script>
-  <title>Flaily — AI triage for your inbox</title>
-  <meta name="description" content="Flaily reads your Gmail twice a day, stars what actually matters, and drafts the replies you'd write anyway — so nothing important slips through. A portfolio project by Florian Sumi." />
+  <title>Flaily: AI triage for your inbox</title>
+  <meta name="description" content="Flaily reads your Gmail twice a day, stars what actually matters, and drafts the replies you'd write anyway, so nothing important slips through. A portfolio project by Florian Sumi." />
   <meta name="theme-color" content="#f5f3ee" />
   <meta name="color-scheme" content="light" />
 
   <!-- Social cards -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Flaily — AI triage for your inbox" />
-  <meta property="og:description" content="Reads your Gmail twice a day, stars what matters, and drafts your replies. You stay in control — it never sends on its own." />
+  <meta property="og:title" content="Flaily: AI triage for your inbox" />
+  <meta property="og:description" content="Reads your Gmail twice a day, stars what matters, and drafts your replies. You stay in control: it never sends on its own." />
   <meta property="og:image" content="https://floriansumi-bot.github.io/flaily/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Flaily — AI triage for your inbox" />
+  <meta name="twitter:title" content="Flaily: AI triage for your inbox" />
   <meta name="twitter:description" content="Reads your Gmail twice a day, stars what matters, and drafts your replies." />
   <meta name="twitter:image" content="https://floriansumi-bot.github.io/flaily/assets/og-image.png" />
 
@@ -82,7 +82,7 @@
           <h1>Stop flailing in your inbox.</h1>
           <p class="lede">
             Flaily quietly reads your Gmail twice a day, <strong>stars what actually matters</strong>,
-            and <strong>drafts the replies</strong> you were going to write anyway — so the documents,
+            and <strong>drafts the replies</strong> you were going to write anyway, so the documents,
             bills and deadlines never slip past you again.
           </p>
           <div class="hero-cta">
@@ -90,15 +90,15 @@
             <a class="btn ghost" href="#what">What it does <span aria-hidden="true">→</span></a>
           </div>
           <ul class="hero-points">
-            <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Never auto-sends — you approve every reply</li>
+            <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Never auto-sends. You approve every reply</li>
             <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Reads only your last 30 days of unread mail</li>
-            <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Runs on a schedule — nothing for you to remember</li>
+            <li><svg class="tick" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Runs on a schedule, so there's nothing for you to remember</li>
           </ul>
         </div>
 
         <!-- Interactive inbox demo -->
         <div class="hero-demo reveal">
-          <div class="window" id="inbox" aria-label="Interactive demo inbox — open an email to see what Flaily did">
+          <div class="window" id="inbox" aria-label="Interactive demo inbox. Open an email to see what Flaily did">
             <div class="window-bar">
               <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
               <span class="window-title" id="inboxTitle">Inbox · triaged by Flaily</span>
@@ -106,7 +106,7 @@
             </div>
 
             <ul class="mail-list" id="mailList">
-              <li class="mail starred" role="button" tabindex="0" data-mail="invoice" aria-label="Open: Swisscom — Your invoice for June is ready">
+              <li class="mail starred" role="button" tabindex="0" data-mail="invoice" aria-label="Open: Swisscom, Your invoice for June is ready">
                 <span class="star" aria-hidden="true">★</span>
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Swisscom</span><span class="time">08:02</span></div>
@@ -115,7 +115,7 @@
                 </div>
                 <span class="chev" aria-hidden="true">›</span>
               </li>
-              <li class="mail starred" role="button" tabindex="0" data-mail="tax" aria-label="Open: Service des contributions — Décision de taxation 2025">
+              <li class="mail starred" role="button" tabindex="0" data-mail="tax" aria-label="Open: Service des contributions, Décision de taxation 2025">
                 <span class="star" aria-hidden="true">★</span>
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Service des contributions</span><span class="time">07:48</span></div>
@@ -124,7 +124,7 @@
                 </div>
                 <span class="chev" aria-hidden="true">›</span>
               </li>
-              <li class="mail draft" role="button" tabindex="0" data-mail="lease" aria-label="Open: Landlord — Re: Can you send the signed lease? Draft reply ready">
+              <li class="mail draft" role="button" tabindex="0" data-mail="lease" aria-label="Open: Landlord, Re: Can you send the signed lease? Draft reply ready">
                 <span class="star" aria-hidden="true">✎</span>
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Landlord</span><span class="time">07:31</span></div>
@@ -133,7 +133,7 @@
                 </div>
                 <span class="chev" aria-hidden="true">›</span>
               </li>
-              <li class="mail draft" role="button" tabindex="0" data-mail="meeting" aria-label="Open: Marie Dubois — Can we move Thursday's call to Friday? Draft replies ready">
+              <li class="mail draft" role="button" tabindex="0" data-mail="meeting" aria-label="Open: Marie Dubois, Can we move Thursday's call to Friday? Draft replies ready">
                 <span class="star" aria-hidden="true">✎</span>
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Marie Dubois</span><span class="time">09:15</span></div>
@@ -142,7 +142,7 @@
                 </div>
                 <span class="chev" aria-hidden="true">›</span>
               </li>
-              <li class="mail muted" role="button" tabindex="0" data-mail="news" aria-label="Open: Newsletter — 10 deals you don't want to miss">
+              <li class="mail muted" role="button" tabindex="0" data-mail="news" aria-label="Open: Newsletter, 10 deals you don't want to miss">
                 <div class="mail-body">
                   <div class="mail-top"><span class="from">Newsletter</span><span class="time">06:50</span></div>
                   <div class="subject">10 deals you don't want to miss</div>
@@ -168,7 +168,7 @@
       <div class="section-head reveal">
         <span class="kicker">Try it</span>
         <h2>Watch Flaily clear an inbox.</h2>
-        <p>A sample inbox — no Gmail, nothing real. Press the button and watch Flaily read each message, decide what matters, and draft what needs a reply. Then open any one to see exactly what it did.</p>
+        <p>A sample inbox, no Gmail, nothing real. Press the button and watch Flaily read each message, decide what matters, and draft what needs a reply. Then open any one to see exactly what it did.</p>
       </div>
 
       <div class="demo-stage reveal" id="demoStage">
@@ -216,7 +216,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6L20.5 9.4l-4.3 4 1 5.9L12 16.6 6.8 19.3l1-5.9-4.3-4 5.9-.8L12 3z" fill="currentColor"/></svg>
           </div>
           <h3>Surfaces what matters</h3>
-          <p>Stars and labels the mail you can't afford to miss — invoices, payroll, government, tax, insurance, legal, deadlines and security alerts — <em>even when no reply is needed.</em></p>
+          <p>Stars and labels the mail you can't afford to miss (invoices, payroll, government, tax, insurance, legal, deadlines and security alerts) <em>even when no reply is needed.</em></p>
         </article>
 
         <article class="card reveal">
@@ -224,7 +224,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16v4z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M13.5 6.5l4 4" stroke="currentColor" stroke-width="1.8"/></svg>
           </div>
           <h3>Drafts your replies</h3>
-          <p>When a message genuinely needs a personal answer, Flaily writes a ready-to-send draft — and attaches the document you were asked for. It <strong>never sends</strong>; you just read, tweak and hit send.</p>
+          <p>When a message needs a personal answer, Flaily writes a ready-to-send draft and attaches the document you were asked for. It <strong>never sends</strong>; you just read, tweak and hit send.</p>
         </article>
 
         <article class="card reveal">
@@ -232,7 +232,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M6.2 6.2l11.6 11.6" stroke="currentColor" stroke-width="1.8"/></svg>
           </div>
           <h3>Blocks the noise</h3>
-          <p>Ask it to block a sender and their future mail skips your inbox for good. The one thing Flaily ever does <em>to</em> your inbox — and only when you say so.</p>
+          <p>Ask it to block a sender and their future mail skips your inbox for good. The one thing Flaily ever does <em>to</em> your inbox, and only when you say so.</p>
         </article>
 
         <article class="card reveal">
@@ -240,7 +240,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>Tells you when it breaks</h3>
-          <p>If the Gmail connection ever expires, Flaily flags it loudly instead of failing in silence — so you're never left thinking it's working when it isn't.</p>
+          <p>If the Gmail connection ever expires, Flaily flags it loudly instead of failing in silence, so you're never left thinking it's working when it isn't.</p>
         </article>
       </div>
     </section>
@@ -256,7 +256,7 @@
         <li class="step reveal">
           <span class="step-num">1</span>
           <h3>Connect your Gmail</h3>
-          <p>A one-time, revocable connection that lets Flaily read your mail and prepare drafts — nothing else.</p>
+          <p>A one-time, revocable connection that lets Flaily read your mail and prepare drafts, nothing else.</p>
         </li>
         <li class="step reveal">
           <span class="step-num">2</span>
@@ -276,7 +276,7 @@
       <div class="section-head reveal">
         <span class="kicker">What it watches for</span>
         <h2>The stuff that costs you money or time if you miss it.</h2>
-        <p>Flaily reads for meaning, not keywords — so it catches the important message even when the subject line is vague.</p>
+        <p>Flaily reads for meaning, not keywords, so it catches the important message even when the subject line is vague.</p>
       </div>
       <ul class="chips reveal">
         <li>Invoices &amp; payments</li>
@@ -304,10 +304,10 @@
         </div>
         <ul class="privacy-list reveal">
           <li><strong>It never sends.</strong> Every reply is a draft waiting for your approval.</li>
-          <li><strong>It never deletes.</strong> Triage means starring and labelling — your mail is never thrown away.</li>
+          <li><strong>It never deletes.</strong> Triage means starring and labelling. Your mail is never thrown away.</li>
           <li><strong>One outbound action.</strong> Blocking a sender is the only thing it does to your inbox, and only when you ask.</li>
-          <li><strong>Read only what it needs.</strong> It looks at unread mail from the last 30 days — not your whole archive.</li>
-          <li><strong>Official rails.</strong> Built on Google's Gmail API and Anthropic's Claude — no scraping, no shady access.</li>
+          <li><strong>Read only what it needs.</strong> It looks at unread mail from the last 30 days, not your whole archive.</li>
+          <li><strong>Official rails.</strong> Built on Google's Gmail API and Anthropic's Claude. No scraping, no shady access.</li>
         </ul>
       </div>
     </section>
@@ -329,11 +329,11 @@
         </details>
         <details>
           <summary>What happens with a sensitive email?</summary>
-          <p>It stars and labels it so you see it immediately — it doesn't act on it, forward it, or reply to it. Sensitive mail is surfaced, never handled.</p>
+          <p>It stars and labels it so you see it immediately. It doesn't act on it, forward it, or reply to it. Sensitive mail is surfaced, never handled.</p>
         </details>
         <details>
           <summary>Can I try it right now?</summary>
-          <p>Flaily runs privately against its owner's Gmail as a scheduled agent, so there's no shared live demo to log into. This page walks through exactly how it behaves — and the code lives on GitHub.</p>
+          <p>Flaily runs privately against its owner's Gmail as a scheduled agent, so there's no shared live demo to log into. This page walks through exactly how it behaves, and the code lives on GitHub.</p>
         </details>
         <details>
           <summary>What is it built with?</summary>

@@ -1,5 +1,5 @@
 {
-  "name": "Flaily — AI email triage",
+  "name": "Flaily: AI email triage",
   "short_name": "Flaily",
   "description": "Reads your Gmail twice a day, stars what matters, and drafts your replies. You stay in control.",
   "start_url": ".",

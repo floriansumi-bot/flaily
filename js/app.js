@@ -55,39 +55,39 @@
     invoice: {
       from: "Swisscom", time: "08:02", subject: "Your invoice for June is ready",
       action: { cls: "act-star", label: "★ Starred · labelled Payment" },
-      note: "Flaily flagged this as a bill so the due date doesn't slip past you. No reply is needed, so it doesn't draft one — it just makes sure the invoice is on your radar."
+      note: "Flaily flagged this as a bill so the due date doesn't slip past you. No reply is needed, so it doesn't draft one; it just makes sure the invoice is on your radar."
     },
     tax: {
       from: "Service des contributions", time: "07:48", subject: "Décision de taxation 2025",
       action: { cls: "act-star", label: "★ Starred · labelled Government · Tax" },
-      note: "An official tax document — surfaced immediately. Flaily never replies to or acts on sensitive government mail; it only makes sure you see it fast."
+      note: "An official tax document, surfaced immediately. Flaily never replies to or acts on sensitive government mail; it only makes sure you see it fast."
     },
     lease: {
       from: "Landlord", time: "07:31", subject: "Re: Can you send the signed lease?",
       quote: "“Hi Florian, could you send over the signed lease when you get a chance? Thanks!”",
-      action: { cls: "act-draft", label: "✎ Flaily drafted 3 replies — pick the one that fits" },
+      action: { cls: "act-draft", label: "✎ Flaily drafted 3 replies. Pick the one that fits" },
       replies: [
-        { label: "Send it now", body: "Hi,\n\nOf course — the signed lease is attached. Let me know if you need anything else.\n\nBest,\nFlorian", attach: "lease.pdf" },
-        { label: "Ask for a day", body: "Hi,\n\nSure thing — I'll dig out the signed copy and send it over by tomorrow evening at the latest.\n\nBest,\nFlorian" },
+        { label: "Send it now", body: "Hi,\n\nOf course, the signed lease is attached. Let me know if you need anything else.\n\nBest,\nFlorian", attach: "lease.pdf" },
+        { label: "Ask for a day", body: "Hi,\n\nSure thing. I'll dig out the signed copy and send it over by tomorrow evening at the latest.\n\nBest,\nFlorian" },
         { label: "More formal", body: "Dear Sir or Madam,\n\nPlease find the signed lease agreement attached, as requested. Do not hesitate to contact me should you require anything further.\n\nKind regards,\nFlorian", attach: "lease.pdf" }
       ],
-      note: "Flaily reads what's being asked and drafts a few replies in different directions — and attaches the file when one's requested. Pick one, tweak it, send it. It never sends on its own."
+      note: "Flaily reads what's being asked and drafts a few replies in different directions, and attaches the file when one's requested. Pick one, tweak it, send it. It never sends on its own."
     },
     meeting: {
       from: "Marie Dubois", time: "09:15", subject: "Can we move Thursday's call to Friday?",
-      quote: "“Hey! Something came up Thursday — could we push our call to Friday, same time? No worries if not.”",
-      action: { cls: "act-draft", label: "✎ Flaily drafted 3 replies — pick the one that fits" },
+      quote: "“Hey! Something came up Thursday, could we push our call to Friday, same time? No worries if not.”",
+      action: { cls: "act-draft", label: "✎ Flaily drafted 3 replies. Pick the one that fits" },
       replies: [
-        { label: "Accept Friday", body: "Hi Marie,\n\nFriday at the same time works great for me — talk then!\n\nBest,\nFlorian" },
-        { label: "Suggest another slot", body: "Hi Marie,\n\nFriday's a little tight for me — could we do Friday morning, or Monday instead? Happy to work around you.\n\nBest,\nFlorian" },
-        { label: "Keep Thursday", body: "Hi Marie,\n\nI'd love to keep Thursday if you can still make it — but if Friday's the only option, just say the word and we'll move it.\n\nBest,\nFlorian" }
+        { label: "Accept Friday", body: "Hi Marie,\n\nFriday at the same time works great for me. Talk then!\n\nBest,\nFlorian" },
+        { label: "Suggest another slot", body: "Hi Marie,\n\nFriday's a little tight for me. Could we do Friday morning, or Monday instead? Happy to work around you.\n\nBest,\nFlorian" },
+        { label: "Keep Thursday", body: "Hi Marie,\n\nI'd love to keep Thursday if you can still make it, but if Friday's the only option, just say the word and we'll move it.\n\nBest,\nFlorian" }
       ],
-      note: "A question that needs a personal answer. Flaily prepared a few directions you might take — accept, propose another time, or hold the slot — so you just pick and send."
+      note: "A question that needs a personal answer. Flaily prepared a few directions you might take (accept, propose another time, or hold the slot) so you just pick and send."
     },
     news: {
       from: "Newsletter", time: "06:50", subject: "10 deals you don't want to miss",
       action: { cls: "act-skip", label: "Left alone" },
-      note: "Promotional — not important and nothing to do, so Flaily leaves it untouched to keep your inbox focused."
+      note: "Promotional, not important and nothing to do, so Flaily leaves it untouched to keep your inbox focused."
     }
   };
 
@@ -117,9 +117,9 @@
       });
       h += '</div>';
       h += '<div class="compose">' +
-        '<div class="compose-bar">✎ Draft — waiting for your approval</div>' +
+        '<div class="compose-bar">✎ Draft, waiting for your approval</div>' +
         '<div id="composeInner">' + composeInner(d, 0) + '</div>' +
-        '<div class="compose-note">🔒 Flaily never sends — you press send.</div>' +
+        '<div class="compose-note">🔒 Flaily never sends; you press send.</div>' +
         '</div>';
     }
     if (d.note) h += '<p class="detail-note">' + esc(d.note) + '</p>';
